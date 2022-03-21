@@ -15,11 +15,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+
+});
+Route::get('/prereservation', function () {
+    return view('prereservation');
+
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/reservationnow', function () {
+    return view('reservationnow');
+});
+
+
 
 Route::get('/companies', [App\Http\Controllers\CompanyController::class, 'index']);
 Route::get('/companies/create', [App\Http\Controllers\CompanyController::class, 'create']);

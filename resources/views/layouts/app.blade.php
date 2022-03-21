@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="rtl">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,13 +44,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('إنشاء الجساب') }}</a>
                                 </li>
                             @endif
                         @else
@@ -61,8 +61,8 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -76,20 +76,7 @@
                 </div>
             </div>
         </nav>
-        <div class="container-fluid">
-            <div class="row min-vh-100 flex-column flex-md-row">
-                <aside class="col-12 col-md-2 p-0 bg-dark flex-shrink-1">
-                    <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
-                        <div class="collapse navbar-collapse ">
-                            <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
-                                <li class="nav-item">
-                                    <a class="nav-link pl-0 text-nowrap" href="/home"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">الصفحة الرئيسية</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link pl-0 text-nowrap" href="/companies"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">إدارة الشركات</span></a>
-                                </li>
-                            </ul>
-                        </div>
+
                     </nav>
                 </aside>
                 <main class="col bg-faded py-3 flex-grow-1">
