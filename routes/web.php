@@ -27,3 +27,7 @@ Route::get('/companies/{company}/edit', [App\Http\Controllers\CompanyController:
 Route::post('/companies', [App\Http\Controllers\CompanyController::class, 'store']);
 Route::post('/companies/{company}', [App\Http\Controllers\CompanyController::class, 'update']);
 Route::post('/companies/{company}/destroy', [App\Http\Controllers\CompanyController::class, 'destroy']);
+
+
+
+Route::get('/intervals', [App\Http\Controllers\IntervlController::class, 'index']);
