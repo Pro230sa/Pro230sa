@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AdminAuthController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,21 +15,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/admin/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('admin.login');
+Route::get('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+
+Route::group(['middleware' => ['auth:admin']], function () {
+    Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+});
+
 Route::get('/', function () {
     return view('welcome');
 
 });
 Route::get('/prereservation', function () {
-    return view('prereservation');
+    return view('preReservation');
 
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/reservationnow', function () {
-    return view('reservationnow');
-});
+Route::get('/reservationnow', [App\Http\Controllers\CupboardController::class, 'index']);
+
+
+// Route::get('/anyPath/{locker}', [App\Http\Controllers\CupboardController::class, 'index']);
 
 
 
