@@ -5,11 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">لوحة التحكم</div>
+                <div class="card-header">لوحة تحكم الأدمن</div>
 
                 <div class="card-body">
                     <ul>
-                        @foreach ($myReservations as $reservation)
+                        @foreach ($reservations as $reservation)
                             <li>user name: {{$reservation->user->name}}</li>   
                             <li>floor number: {{$reservation->locker->cupboard->floor_number}}</li>   
                             <li>cupboard number: {{$reservation->locker->cupboard->number}}</li>   
