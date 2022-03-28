@@ -45,13 +45,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __(' Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('إنشاء الجساب') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Sign up') }}</a>
                                 </li>
                             @endif
                         @else
@@ -85,10 +85,10 @@
                         <div class="collapse navbar-collapse ">
                             <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                                 <li class="nav-item">
-                                    <a class="nav-link pl-0 text-nowrap" href="/home"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">الصفحة الرئيسية</span></a>
+                                    <a class="nav-link pl-0 text-nowrap" href="/reservatioNow"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">Reservation Page</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link pl-0 text-nowrap" href="/companies"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">إدارة الشركات</span></a>
+                                    <a class="nav-link pl-0 text-nowrap" href="/home"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">My Reservation</span></a>
                                 </li>
                             </ul>
                         </div>

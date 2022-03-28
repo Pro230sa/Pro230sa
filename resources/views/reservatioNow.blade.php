@@ -1,18 +1,19 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container-fluid">
     <div class="row">
         {{-- foreach (cupboards) --}}
         @foreach ($cupBoards as $cupBoard)
-          <div class="col-3 mt-3">
+          <div class="col-6 mt-6">
             <div class="card">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{$cupBoard->number}}</h5>
+                  <p class="card-text">Bulding Name: {{$cupBoard->building_name}}</p>
                   <p class="card-text">Floor Number: {{$cupBoard->floor_number}}</p>
+
                   <a class="btn btn-primary" data-bs-toggle="collapse" href="#lockersCollapse-{{$cupBoard->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    Link with href
+                    To reserve locker
                   </a>
                   <div class="collapse mt-2" id="lockersCollapse-{{$cupBoard->id}}">
                     <div class="card card-body">

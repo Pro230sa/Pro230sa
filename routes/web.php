@@ -32,10 +32,12 @@ Route::get('/prereservation', function () {
 
 });
 
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/reservationnow', [App\Http\Controllers\CupboardController::class, 'index']);
+Route::get('/reservatioNow', [App\Http\Controllers\CupboardController::class, 'index']);
 
 
 // Route::get('/anyPath/{locker}', [App\Http\Controllers\CupboardController::class, 'index']);
