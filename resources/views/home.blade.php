@@ -8,14 +8,14 @@
                 <div class="card-header">لوحة التحكم</div>
 
                 <div class="card-body">
-                    <ul>
+                <ul>
                         @foreach ($myReservations as $reservation)
                             <li>user name: {{$reservation->user->name}}</li>   
                             <li>floor number: {{$reservation->locker->cupboard->floor_number}}</li>   
                             <li>cupboard number: {{$reservation->locker->cupboard->number}}</li>   
                             <li>locker number: {{$reservation->locker->locker_number}}</li>   
-                            ========
-                        @endforeach
+
+                        @endforeach-->
                     </ul>
                 </div>
             </div>

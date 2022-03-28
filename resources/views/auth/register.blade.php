@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.guests')
 
 @section('content')
 <div class="container">
@@ -26,10 +26,10 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __(' University email ') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" pattern="^[0-9]+@qu.edu.sa$" title="الرجاء إدخال الإيميل الجامعي">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" pattern="^[0-9]+@qu.edu.sa$" title="Please enter the university email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -60,6 +60,27 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        <!--department-->
+                        <div class="row mb-3">
+                            <label for="department" class="col-md-4 col-form-label text-md-end">{{ __('department') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="department" type="text" class="form-control @error('department') is-invalid @enderror" name="department" value="{{ old('department') }}" required autocomplete="department" autofocus>
+                            </div>
+                        </div>
+                                <!--phone num-->
+                            <div class="row mb-3">
+                                <label for="phone_number" class="col-md-4 col-form-label text-md-end">{{ __('Phone number') }}</label>
+    
+                                    <div class="col-md-6">
+                                        <input id="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus>
+                                        @error('phone_number')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                        </div>
+                    </div>
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
