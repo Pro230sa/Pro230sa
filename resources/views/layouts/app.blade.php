@@ -21,6 +21,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    
+
 </head>
 <body>
     <div id="app">
@@ -85,10 +88,16 @@
                         <div class="collapse navbar-collapse ">
                             <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                                 <li class="nav-item">
-                                    <a class="nav-link pl-0 text-nowrap" href="/reservatioNow"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">Reservation Page</span></a>
+                                    <a class="nav-link pl-0 text-nowrap" href="/reserve_now"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">Reserve Now</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link pl-0 text-nowrap" href="/home"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">My Reservation</span></a>
+                                    <a class="nav-link pl-0 text-nowrap" href="/my_reservations"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">My Reservation</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pl-0 text-nowrap" href="{{route('admin.reservation_times')}}"><i class="fa fa-book fa-fw"></i> <span class="font-weight-bold">Reservations Times</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link pl-0 text-nowrap" href="{{route('admin.reservation_management')}}"><i class="fa fa-book fa-fw"></i> <span class="font-weight-bold">Reservations Management</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -101,9 +110,8 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     @yield('script')
-    <script>
-        javascript
-    </script>
 </body>
 </html>

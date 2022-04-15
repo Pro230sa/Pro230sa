@@ -9,6 +9,7 @@ class Reservation extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
 
     // reservation -> user
     public function user() {

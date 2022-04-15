@@ -26,6 +26,6 @@ class HomeController extends Controller
     public function index()
     {
         $myReservations = Auth::user()->reservations;
-        return view('preReservation', compact('myReservations'));
+        return view('student_views.my_reservations', compact('myReservations'));
     }
 }
