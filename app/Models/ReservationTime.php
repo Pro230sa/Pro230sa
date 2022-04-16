@@ -10,4 +10,8 @@ class ReservationTime extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function reservations() {
+        return $this->hasMany(Reservation::class);
+    }
 }

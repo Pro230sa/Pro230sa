@@ -1,40 +1,42 @@
 @extends('layouts.app')
 @section('content')
 <div class="container-fluid">
-    @if($reservation_time->status)
+    @if($reservation_time && $reservation_time->status && Auth::user()->can_reserve)
       <div class="row">
           {{-- foreach (cupboards) --}}
           @foreach ($cupBoards as $cupBoard)
-            <div class="col-6 mt-6">
-              <div class="card">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">{{$cupBoard->number}}</h5>
-                    <p class="card-text">Bulding Name: {{$cupBoard->building_name}}</p>
-                    <p class="card-text">Floor Number: {{$cupBoard->floor_number}}</p>
+            @if($cupBoard->available_lockers->count() > 0)
+              <div class="col-6 mt-6">
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{$cupBoard->number}}</h5>
+                      <p class="card-text">Bulding Name: {{$cupBoard->building_name}}</p>
+                      <p class="card-text">Floor Number: {{$cupBoard->floor_number}}</p>
 
-                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#lockersCollapse-{{$cupBoard->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
-                      To reserve locker
-                    </a>
-                    <div class="collapse mt-2" id="lockersCollapse-{{$cupBoard->id}}">
-                      <div class="card card-body">
-                          {{-- foreach (lockers in cupboards) --}}
-                          @foreach ($cupBoard->lockers as $locker)
-                            <div class="container-fluid">
-                              <div class="row">
-                                <div class="col-sm-3 p-0">
-                                  <a class="reserveNowBtn btn btn-outline-primary my-1" data-locker-number="{{$locker->locker_number}}" data-locker-id="{{$locker->id}}" data-bs-toggle="modal" href="#toggleReserveNowModal" role="button">{{$locker->locker_number}}</a>
+                      <a class="btn btn-primary" data-bs-toggle="collapse" href="#lockersCollapse-{{$cupBoard->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        To reserve locker
+                      </a>
+                      <div class="collapse mt-2" id="lockersCollapse-{{$cupBoard->id}}">
+                        <div class="card card-body">
+                            {{-- foreach (lockers in cupboards) --}}
+                            @foreach ($cupBoard->available_lockers as $locker)
+                              <div class="container-fluid">
+                                <div class="row">
+                                  <div class="col-sm-3 p-0">
+                                    <a class="reserveNowBtn btn btn-outline-primary my-1" data-locker-number="{{$locker->locker_number}}" data-locker-id="{{$locker->id}}" data-bs-toggle="modal" href="#toggleReserveNowModal" role="button">{{$locker->locker_number}}</a>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                            {{-- <a href="anyPath/{{$locker->id}}">{{$locker->locker_number}}</a> --}}
-                          @endforeach
-                          {{-- end foreach (lockers in cupboards) --}}
+                              {{-- <a href="anyPath/{{$locker->id}}">{{$locker->locker_number}}</a> --}}
+                            @endforeach
+                            {{-- end foreach (lockers in cupboards) --}}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                </div>
               </div>
-            </div>
+            @endif
           @endforeach
           {{-- end foreach (cupboards) --}}
 
@@ -52,6 +54,7 @@
                   <div class="container-fluid">
                     <form class="row" id="modalForm" action="#" method="post">
                       @csrf
+                      <input type="hidden" name="reservation_time_id" value={{$reservation_time->id}}>
                       <div class="col-sm-12 form-check">
                         <input type="checkbox" name="terms_conditions" class="form-check-input" required>
                         <label class="form-check-label">Accept Terms & Conditions</label>
@@ -77,7 +80,7 @@
 
       </div>
     @else
-      <h4>No Reservation Time Available</h4>
+      <h4>No Reservation Available</h4>
     @endif
             
 </div>

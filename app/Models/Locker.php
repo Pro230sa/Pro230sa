@@ -14,4 +14,8 @@ class Locker extends Model
     {
         return $this->belongsTo(Cupboard::class);
     }
+
+    public function reservations() {
+        return $this->hasMany(Reservation::class);
+    }
 }

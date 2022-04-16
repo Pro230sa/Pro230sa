@@ -22,6 +22,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">  
     
 
 </head>
@@ -87,18 +89,25 @@
                     <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
                         <div class="collapse navbar-collapse ">
                             <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
-                                <li class="nav-item">
-                                    <a class="nav-link pl-0 text-nowrap" href="/reserve_now"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">Reserve Now</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link pl-0 text-nowrap" href="/my_reservations"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">My Reservation</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link pl-0 text-nowrap" href="{{route('admin.reservation_times')}}"><i class="fa fa-book fa-fw"></i> <span class="font-weight-bold">Reservations Times</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link pl-0 text-nowrap" href="{{route('admin.reservation_management')}}"><i class="fa fa-book fa-fw"></i> <span class="font-weight-bold">Reservations Management</span></a>
-                                </li>
+                                @if(Auth::guard('web')->check())
+                                    <li class="nav-item">
+                                        <a class="nav-link pl-0 text-nowrap" href="/reserve_now"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">Reserve Now</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link pl-0 text-nowrap" href="/my_reservations"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">My Reservation</span></a>
+                                    </li>
+                                @endif
+                                @if(Auth::guard('admin')->check())
+                                    <li class="nav-item">
+                                        <a class="nav-link pl-0 text-nowrap" href="{{route('admin.dashboard')}}"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">Dashboard</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link pl-0 text-nowrap" href="{{route('admin.reservation_times')}}"><i class="fa fa-book fa-fw"></i> <span class="font-weight-bold">Reservations Times</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link pl-0 text-nowrap" href="{{route('admin.reservation_management')}}"><i class="fa fa-book fa-fw"></i> <span class="font-weight-bold">Reservations Management</span></a>
+                                    </li>
+                                @endif
                             </ul>
                         </div>
                     </nav>
@@ -112,6 +121,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
     @yield('script')
 </body>
 </html>

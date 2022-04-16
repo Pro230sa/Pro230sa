@@ -10,7 +10,7 @@
           -->
     </div>
     <div class="row mt-3">
-        <table class="table">
+        <table class="table" id="myTable">
             <thead>
                 <tr>
                     <th>#</th>
@@ -19,28 +19,46 @@
                     <th>Reservation Time</th>
                     <th>Name</th>
                     <th>Phone Number</th>
-                    <th>Fee Receipt</th>
-                    <th>key of Locker </th>
                     <th>status</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                {{-- @foreach ($reservation_times as $key => $reservation_time)
+                @foreach ($reservations as $key => $reservation)
                     <tr>
                         <th scope="row">{{$key+1}}</th>
-                        <td>{{$cupboards->number}}</td>
-                        <td>{{$lockers->locker_number}}</td>
-                        <td>{{$users->name}}</td>
-                        <td>{{$users->phone_number}}</td>
-                        <td>{{$reservations->status}}</td>
+                        <td>{{$reservation->locker->cupboard->number}}</td>
+                        <td>{{$reservation->locker->locker_number}}</td>
+                        <td>{{$reservation->reservation_time->title}}</td>
+                        <td>{{$reservation->user->name}}</td>
+                        <td>{{$reservation->user->phone_number}}</td>
                         <td>
-                            <a href="{{route('admin.reservation_times.edit', $reservation_time->id)}}" class="btn btn-outline-secondary"><i class="fa fa-edit fa-fw"></i></a>
+                            @if($reservation->status == 'waiting')
+                                <span class="badge bg-secondary">Waiting For Student</span>
+                            @elseif($reservation->status == 'accepted')
+                                <span class="badge bg-primary">Student Has The Key</span>
+                            @elseif($reservation->status == 'completed')
+                                <span class="badge bg-success">Student Returned The Key</span>
+                            @endif
+                        </td>
+                        <td>
+                            <a href="{{route('admin.reservation_management.edit', $reservation->id)}}" class="btn btn-outline-secondary"><i class="fa fa-edit fa-fw"></i></a>
                         </td>
                         
                     </tr>
-                @endforeach --}}
+                @endforeach
             </tbody>
         </table>
     </div>
 </div>
+@endsection
+
+@section('script')
+    <script>
+      
+      $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
+
+    </script>
 @endsection

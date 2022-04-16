@@ -2,7 +2,10 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-between">
+        <div class="col-md-4">
+            <img src="{{ asset('images/logo.png') }}" class="img-fluid">
+        </div>
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
@@ -65,9 +68,25 @@
                             </div>
                         </div>
                     </form>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>contact us:</p>
+                            <ul>
+                                <li>Phone Number: 88888888888</li>
+                                <li>Email: test@gmail.com</li>
+                            </ul>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            
+        </div>
+    </div>
 </div>
 @endsection

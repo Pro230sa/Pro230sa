@@ -30,10 +30,16 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin'], function () 
 
 
     Route::get('reservation_management', [App\Http\Controllers\ReservationController::class, 'index'])->name('admin.reservation_management');
+    Route::get('reservation_management/{reservation}/edit', [App\Http\Controllers\ReservationController::class, 'edit'])->name('admin.reservation_management.edit');
+    Route::put('reservation_management/{reservation}', [App\Http\Controllers\ReservationController::class, 'update'])->name('admin.reservation_management.update');
+
+
+
+    Route::get('dashboard', [App\Http\Controllers\HomeController::class, 'admin_dashboard'])->name('admin.dashboard');
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 
 });
 Route::get('/prereservation', function () {

@@ -31,6 +31,7 @@ class ReservationController extends Controller
     public function reserve_locker(Request $request, Locker $locker) {
         $user = Auth::user();
         $reservation = $user->reservations()->create([
+            'reservation_time_id' => $request->reservation_time_id,
             'locker_id' => $locker->id,
             'status' => 'waiting'
         ]);
@@ -52,6 +53,18 @@ class ReservationController extends Controller
     public function index() {
         $reservations = Reservation::all();
         return view('admin_views.reservation_management.index', compact('reservations'));
+    }
+
+    public function edit(Reservation $reservation) {
+        return view('admin_views.reservation_management.edit', compact('reservation'));
+    }
+
+    public function update(Request $request, Reservation $reservation) {
+        $reservation->update([
+            'status' => $request->status
+        ]);
+
+        return redirect(route('admin.reservation_management'));
     }
 
     

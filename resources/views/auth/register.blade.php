@@ -29,7 +29,8 @@
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __(' University email ') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" pattern="^[0-9]+@qu.edu.sa$" title="Please enter the university email">
+                                {{-- <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" pattern="^[0-9]+@qu.edu.sa$" title="Please enter the university email"> --}}
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" title="Please enter the university email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">

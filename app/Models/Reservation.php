@@ -20,4 +20,8 @@ class Reservation extends Model
     public function locker() {
         return $this->belongsTo(Locker::class);
     }
+
+    public function reservation_time() {
+        return $this->belongsTo(ReservationTime::class);
+    }
 }

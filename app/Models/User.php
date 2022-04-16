@@ -44,8 +44,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $appends = ['can_reserve'];
 
     public function reservations() {
         return $this->hasMany(Reservation::class);
+    }
+
+    public function getCanReserveAttribute() {
+        $reservation = $this->reservations()->latest()->first();
+        if($reservation) {
+            return $reservation->status == 'completed';
+        }
+        return true;
     }
 }
