@@ -49,29 +49,15 @@ Route::get('/prereservation', function () {
 
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
+Route::group(['middleware' => ['verified']], function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/my_reservations', [App\Http\Controllers\ReservationController::class, 'my_reservations'])->name('my_reservations');
 
-Route::get('/my_reservations', [App\Http\Controllers\ReservationController::class, 'my_reservations'])->name('my_reservations');
-
-// Route::get('/reservatioNow', [App\Http\Controllers\CupboardController::class, 'index']);
-Route::post('/reserve_now/{locker}', [App\Http\Controllers\ReservationController::class, 'reserve_locker']);
-Route::get('/reserve_now', [App\Http\Controllers\ReservationController::class, 'reserve_now']);
-Route::get('/completed_reservation/{reservation}', [App\Http\Controllers\ReservationController::class, 'completed_reservation'])->name('completed_resrevation');
-
-
-// Route::get('/anyPath/{locker}', [App\Http\Controllers\CupboardController::class, 'index']);
+    Route::post('/reserve_now/{locker}', [App\Http\Controllers\ReservationController::class, 'reserve_locker']);
+    Route::get('/reserve_now', [App\Http\Controllers\ReservationController::class, 'reserve_now']);
+    Route::get('/completed_reservation/{reservation}', [App\Http\Controllers\ReservationController::class, 'completed_reservation'])->name('completed_resrevation');
+});
 
 
-
-// Route::get('/companies', [App\Http\Controllers\CompanyController::class, 'index']);
-// Route::get('/companies/create', [App\Http\Controllers\CompanyController::class, 'create']);
-// Route::get('/companies/{company}/edit', [App\Http\Controllers\CompanyController::class, 'edit']);
-// Route::post('/companies', [App\Http\Controllers\CompanyController::class, 'store']);
-// Route::post('/companies/{company}', [App\Http\Controllers\CompanyController::class, 'update']);
-// Route::post('/companies/{company}/destroy', [App\Http\Controllers\CompanyController::class, 'destroy']);
-
-
-
-// Route::get('/intervals', [App\Http\Controllers\IntervlController::class, 'index']);

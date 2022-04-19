@@ -39,6 +39,8 @@
                                 <span class="badge bg-primary">Student Has The Key</span>
                             @elseif($reservation->status == 'completed')
                                 <span class="badge bg-success">Student Returned The Key</span>
+                            @elseif($reservation->status == 'cancelled')
+                                <span class="badge bg-danger">Student Didn't Pay</span>
                             @endif
                         </td>
                         <td>
@@ -56,9 +58,22 @@
 @section('script')
     <script>
       
-      $(document).ready( function () {
-            $('#myTable').DataTable();
-        } );
+        $(document).ready( function () {    
+            $('#myTable').DataTable({
+                dom: 'lBfrtip',
+                buttons: [
+                    {
+                        extend: 'excel',
+                        text: '<i class="fa-solid fa-file-csv"></i> Export Records To Excel',
+                        
+                        exportOptions: {
+                            columns: ':visible',
+                            rows: ':visible'
+                        }
+                    },
+                ]
+            });
+        });
 
     </script>
 @endsection

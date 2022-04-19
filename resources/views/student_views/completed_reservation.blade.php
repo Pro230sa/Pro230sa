@@ -17,7 +17,7 @@
                 <li>Floor Number: {{$reservation->locker->cupboard->floor_number}}</li> 
                 <li>Cupboard Number: {{$reservation->locker->cupboard->number}}</li>   
                 <li>Locker Number: {{$reservation->locker->locker_number}}</li>
-                <li>Fee: {{$reservation->locker->fee}}</li>
+                <li>Fee: {{$reservation->reservation_time->locker_fee}} SAR</li>
                 <li>status:{{$reservation->status}}</li>
             </ul>
         </div>

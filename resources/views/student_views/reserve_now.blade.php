@@ -8,7 +8,6 @@
             @if($cupBoard->available_lockers->count() > 0)
               <div class="col-6 mt-6">
                 <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{$cupBoard->number}}</h5>
                       <p class="card-text">Bulding Name: {{$cupBoard->building_name}}</p>
@@ -48,6 +47,9 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                  <ul>
+                    <li>The price for reservation is: {{$reservation_time->locker_fee}} SAR</li>
+                  </ul>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam possimus iste exercitationem. Natus fugit ea ipsum porro consectetur. Qui corrupti exercitationem id, magni recusandae dolores quidem vel debitis eos nihil!
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus iusto, corporis vel mollitia sint odio corrupti iure est laudantium, dolores a nam autem tempore quis hic, voluptas quia ullam optio!
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe reprehenderit officia, rem sunt libero blanditiis mollitia, laborum molestias ea quae unde repudiandae inventore repellat ipsam esse voluptas quod, autem ab!
