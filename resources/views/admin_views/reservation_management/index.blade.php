@@ -18,6 +18,7 @@
                     <th>Locker</th>
                     <th>Reservation Time</th>
                     <th>Name</th>
+                    <th>University Email</th>
                     <th>Phone Number</th>
                     <th>status</th>
                     <th>Actions</th>
@@ -31,6 +32,7 @@
                         <td>{{$reservation->locker->locker_number}}</td>
                         <td>{{$reservation->reservation_time->title}}</td>
                         <td>{{$reservation->user->name}}</td>
+                        <td>{{$reservation->user->email}}</td>
                         <td>{{$reservation->user->phone_number}}</td>
                         <td>
                             @if($reservation->status == 'waiting')
