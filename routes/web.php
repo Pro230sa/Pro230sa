@@ -55,6 +55,9 @@ Route::group(['middleware' => ['verified']], function () {
 
     Route::get('/my_reservations', [App\Http\Controllers\ReservationController::class, 'my_reservations'])->name('my_reservations');
 
+    Route::get('profile', [App\Http\Controllers\HomeController::class, 'profile_page'])->name('profile');
+    Route::post('profile', [App\Http\Controllers\HomeController::class, 'profile_update'])->name('profile');
+
     Route::post('/reserve_now/{locker}', [App\Http\Controllers\ReservationController::class, 'reserve_locker']);
     Route::get('/reserve_now', [App\Http\Controllers\ReservationController::class, 'reserve_now']);
     Route::get('/completed_reservation/{reservation}', [App\Http\Controllers\ReservationController::class, 'completed_reservation'])->name('completed_resrevation');
