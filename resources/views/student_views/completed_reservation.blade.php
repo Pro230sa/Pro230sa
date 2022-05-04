@@ -1,11 +1,31 @@
 @extends('layouts.app')
+<style>
 
+div { font-size: large; }
+
+.card {
+  margin: 20px;
+  padding: 20px;
+  width: 1150px;
+  min-height: 200px;
+  display: grid;
+  grid-template-rows: 20px 50px 1fr 50px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+}
+
+.card {
+  background: linear-gradient(90deg, rgba(148,187,233,1) 0%, rgba(240,248,255,1) 0%);
+}
+
+</style>
 @section('content')
 <!--الكارد الي فيه حجوزاتي السابقه-->
 <div class="container">
     <div class="card">
         <div class="card-header">
-            Reservation Information
+            <b> Reservation Information </b>
         </div>
         <div class="card-body">
             <ul>

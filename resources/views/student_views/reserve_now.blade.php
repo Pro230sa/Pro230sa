@@ -162,16 +162,29 @@ body {
             <div class="modal-dialog modal-lg modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalToggleLabel">Reserve Locker: <span id="lockerNumber"></span></h5>
+                  <h5 class="modal-title" id="exampleModalToggleLabel">Reserve Locker : <span id="lockerNumber"></span></h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <ul>
-                    <li>The price for reservation is: {{$reservation_time->locker_fee}} SAR</li>
+                    <li> <b> The price for reservation is: {{$reservation_time->locker_fee}} SAR </b> </li>
                   </ul>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam possimus iste exercitationem. Natus fugit ea ipsum porro consectetur. Qui corrupti exercitationem id, magni recusandae dolores quidem vel debitis eos nihil!
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus iusto, corporis vel mollitia sint odio corrupti iure est laudantium, dolores a nam autem tempore quis hic, voluptas quia ullam optio!
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe reprehenderit officia, rem sunt libero blanditiis mollitia, laborum molestias ea quae unde repudiandae inventore repellat ipsam esse voluptas quod, autem ab!
+                  <ul>
+                  <li> Lockers are rented every the semester. </li>
+                  <li> Priority in renting lockers is for those who apply first. </li>
+                  <li> The lease term ends when the student graduates. </li>
+                  <li> It is not possible to rent more than one locker only. </li>
+                  <li> When renting a locker, the student must pay a fee. </li>
+                  <li> The student must empty the rented locker of its contents, clean it at the end of the rental period, and hand over the key to the Student Affairs Office within the specified time. If this is not done, the university will remove its contents within 24 hours of the end of the period. </li>
+                  <li> It is prohibited to store any perishable, flammable, or explosive materials in the closet, and the seizure of any of these materials inside will result in the termination of the lease. </li>
+                  <li> It is prohibited to store prohibited materials and weapons of any kind in the safe, and the seizure of any of these materials inside may result in disciplinary action. </li>
+                  <li> The university is not responsible for any lost items in the locker. </li>
+                  <li> The university has the right to search safes when it deems it necessary. </li>
+                  <li> The university has the right to terminate the lease in case of misuse. </li>
+                  
+
+                  </ul>
+
                   <div class="container-fluid">
                     <form class="row" id="modalForm" action="#" method="post">
                       @csrf
