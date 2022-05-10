@@ -120,11 +120,11 @@ body {
 <div class="container">
     <div class="row justify-content-between">
         <div class="col-md-4">
-            <img src="{{ asset('images/logo.png') }}" class="img-fluid">
+            <img src="{{ asset('images/lms (1).png') }}" class="img-fluid">
         </div>
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header"><h3>{{ __('Login') }}</h3></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -165,7 +165,7 @@ body {
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember me') }}
+                                      {{ __('Remember me') }}
                                     </label>
                                 </div>
                             </div>
@@ -173,9 +173,10 @@ body {
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-outline-primary">
                                     {{ __('Login') }}
                                 </button>
+
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
@@ -185,7 +186,7 @@ body {
                             </div>
                         </div>
                     </form>
-                   
+              
                 </div>
             </div>
         </div>

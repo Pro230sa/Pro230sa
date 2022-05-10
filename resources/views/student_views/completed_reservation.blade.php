@@ -16,8 +16,9 @@ div { font-size: large; }
 }
 
 .card {
-  background: linear-gradient(90deg, rgba(148,187,233,1) 0%, rgba(240,248,255,1) 0%);
+background: linear-gradient(90deg, rgba(148,187,233,1) 0%, rgba(240,248,255,1) 0%);
 }
+.text{color:rgb(42, 147, 176)}
 
 </style>
 @section('content')
@@ -25,21 +26,24 @@ div { font-size: large; }
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <b> Reservation Information </b>
+            <h4><b> Reservation Information </b><h4>
         </div>
+        <div class="alert alert-success" role="alert">
+        
+        <strong>The reservation has been successfully completed</strong> Please go to the office of Ms.
+            Noura in the literary building to receive the key and pay the fees        </div>
         <div class="card-body">
-            <ul>
-                <li>Name: {{$reservation->user->name}}</li>   
-                <li>University Email:{{$reservation->user->email}}</li>
-                <li>Department:{{$reservation->user->department}}</li>   
-                <li>Phone Number: {{$reservation->user->phone_number}}</li>    
-                <li>Bulding Name: {{$reservation->locker->cupboard->building_name}}</li>     
-                <li>Floor Number: {{$reservation->locker->cupboard->floor_number}}</li> 
-                <li>Cupboard Number: {{$reservation->locker->cupboard->number}}</li>   
-                <li>Locker Number: {{$reservation->locker->locker_number}}</li>
-                <li>Fee: {{$reservation->reservation_time->locker_fee}} SAR</li>
-                <li>status:{{$reservation->status}}</li>
-            </ul>
+        
+                <h5><b >Name:</b>&nbsp{{$reservation->user->name}}. </h5> 
+                <h5><b >University Email:</b>&nbsp{{$reservation->user->email}}.</h5>
+                <h5><b >Department:</b>&nbsp{{$reservation->user->department}}.</h5>
+                <h5><b >Phone Number:</b>&nbsp{{$reservation->user->phone_number}}.</h5>
+                <h5><b >Bulding Name:</b>&nbsp{{$reservation->locker->cupboard->building_name}}.</h5>    
+                <h5><b >Floor Number:</b>&nbsp{{$reservation->locker->cupboard->floor_number}}.</h5>
+                <h5><b >Cupboard Number:</b>&nbsp{{$reservation->locker->cupboard->number}}.</h5>
+                <h5><b >Locker Number:</b>&nbsp{{$reservation->locker->locker_number}}.</h5>
+                <h5><b >Fee:</b>&nbsp{{$reservation->reservation_time->locker_fee}}.</h5>
+                <h5><b >status:</b>&nbsp{{$reservation->status}}.</h5>
         </div>
     </div>
 @endsection

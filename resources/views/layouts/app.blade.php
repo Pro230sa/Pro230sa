@@ -1,6 +1,15 @@
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+<!--style-->
+<style type="text/css">
+    .bar{
+        
+        background-color:rgb(42, 147, 176)}
+
+    </style>
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,7 +41,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ asset('images/logo.png') }}" alt="" width="60">
+                    <img src="{{ asset('images/New.png') }}" alt="" width="120">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -86,27 +95,27 @@
 
         <div class="container-fluid">
             <div class="row min-vh-100 flex-column flex-md-row">
-                <aside class="col-12 col-md-2 p-0 bg-dark flex-shrink-1">
-                    <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-2">
+                <aside class="col-12 col-md-2 p-0 bar flex-shrink-1">
+                    <nav class="navbar navbar-expand navbar-dark bar flex-md-column flex-row align-items-start py-2">
                         <div class="collapse navbar-collapse ">
                             <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                                 @if(Auth::guard('web')->check())
                                     <li class="nav-item">
-                                        <a class="nav-link pl-0 text-nowrap" href="/reserve_now"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">Reserve Now</span></a>
+                                        <a class="nav-link pl-0 text-nowrap" href="/reserve_now"><i class="fa-solid fa-plus"></i></i> <span class="font-weight-bold">Reserve Now</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link pl-0 text-nowrap" href="/my_reservations"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">My Reservation</span></a>
+                                        <a class="nav-link pl-0 text-nowrap" href="/my_reservations"><i class="fa-solid fa-user"></i> <span class="font-weight-bold">My Reservation</span></a>
                                     </li>
                                 @endif
                                 @if(Auth::guard('admin')->check())
                                     <li class="nav-item">
-                                        <a class="nav-link pl-0 text-nowrap" href="{{route('admin.dashboard')}}"><i class="fa fa-bullseye fa-fw"></i> <span class="font-weight-bold">Dashboard</span></a>
+                                        <a class="nav-link pl-0 text-nowrap" href="{{route('admin.dashboard')}}"><i class="fa-solid fa-chart-line"></i> <span class="font-weight-bold">Dashboard</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link pl-0 text-nowrap" href="{{route('admin.reservation_times')}}"><i class="fa fa-book fa-fw"></i> <span class="font-weight-bold">Reservations Times</span></a>
+                                        <a class="nav-link pl-0 text-nowrap" href="{{route('admin.reservation_times')}}"><i class="fa-solid fa-clock"></i> <span class="font-weight-bold">Reservations Times</span></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link pl-0 text-nowrap" href="{{route('admin.reservation_management')}}"><i class="fa fa-book fa-fw"></i> <span class="font-weight-bold">Reservations Management</span></a>
+                                        <a class="nav-link pl-0 text-nowrap" href="{{route('admin.reservation_management')}}"><i class="fa-solid fa-list-check"></i> <span class="font-weight-bold">Reservations Management</span></a>
                                     </li>
                                 @endif
                             </ul>

@@ -1,3 +1,4 @@
+@extends('layouts.app')
 <style>
   * {
   margin: 0;
@@ -114,10 +115,8 @@ body {
     justify-content: center;
   }
 }
-
+.text{color:rgb(42, 147, 176)}
 </style>
-
-@extends('layouts.app')
 @section('content')
 <div class="container-fluid">
     @if($reservation_time && $reservation_time->status && Auth::user()->can_reserve)
@@ -128,11 +127,11 @@ body {
               <div class="col-6 mt-6">
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">{{$cupBoard->number}}</h5>
-                      <p class="card-text">Bulding Name: {{$cupBoard->building_name}}</p>
-                      <p class="card-text">Floor Number: {{$cupBoard->floor_number}}</p>
+                      <h2 class="card-title"><b class="text ">{{$cupBoard->number}}</b></h2>
+                      <hp class="card-text"><b>Bulding Name:</b>&nbsp {{$cupBoard->building_name}}.</p>
+                      <p class="card-text"><b>Floor Number:</b>&nbsp{{$cupBoard->floor_number}}.</p>
 
-                      <a class="btn btn-primary" data-bs-toggle="collapse" href="#lockersCollapse-{{$cupBoard->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                      <a class="btn btn-outline-secondary" data-bs-toggle="collapse" href="#lockersCollapse-{{$cupBoard->id}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                         To reserve locker
                       </a>
                       <div class="collapse mt-2" id="lockersCollapse-{{$cupBoard->id}}">

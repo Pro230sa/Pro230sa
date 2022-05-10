@@ -1,9 +1,15 @@
 @extends('layouts.app')
-
+<!--style-->
+<style type="text/css">
+    h4{
+        color:rgb(42, 147, 176);
+    }
+    </style>
+    
 @section('content')
 <div class="container pt-5">
     <div class="row">
-        <h4>Add Reservation Time</h4>
+        <h4 ><b>Add Reservation Time</b></h4>
     </div>
 
     <form class="row" method="post" action="{{route('admin.reservation_times')}}">

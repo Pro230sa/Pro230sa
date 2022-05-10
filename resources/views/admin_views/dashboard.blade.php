@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-uppercase mb-1">Waiting Reservations</div>
+                            <div class="text-xs font-weight-bold text-uppercase mb-1"><b>Waiting Reservations</b></div>
                             <div class="h5 mb-0 font-weight-bold">{{$waiting_reservations_count}}</div>
                         </div>
                         <div class="col-auto">
@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-uppercase mb-1">Accepted Reservations</div>
+                            <div class="text-xs font-weight-bold text-uppercase mb-1"><b>Accepted Reservations</b></div>
                             <div class="h5 mb-0 font-weight-bold">{{$accepted_reservations_count}}</div>
                         </div>
                         <div class="col-auto">
@@ -38,7 +38,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-uppercase mb-1">Completed Reservations</div>
+                            <div class="text-xs font-weight-bold text-uppercase mb-1"><b>Completed Reservations</b></div>
                             <div class="h5 mb-0 font-weight-bold">{{$completed_reservations_count}}</div>
                         </div>
                         <div class="col-auto">
@@ -53,7 +53,7 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-uppercase mb-1">Total Income</div>
+                            <div class="text-xs font-weight-bold text-uppercase mb-1"><b>Total Income</b></div>
                             <div class="h5 mb-0 font-weight-bold">{{$total_income}}</div>
                         </div>
                         <div class="col-auto">

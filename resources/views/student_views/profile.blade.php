@@ -4,19 +4,19 @@
 div { font-size: large; }
 
 .card {
-  margin: 20px;
-  padding: 20px;
-  width: 1150px;
-  min-height: 200px;
-  display: grid;
-  grid-template-rows: 20px 50px 1fr 50px;
-  border-radius: 10px;
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
-  transition: all 0.2s;
+margin: 20px;
+padding: 20px;
+width: 1150px;
+min-height: 200px;
+display: grid;
+grid-template-rows: 20px 50px 1fr 50px;
+border-radius: 10px;
+box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+transition: all 0.2s;
 }
 
 .card {
-  background: linear-gradient(90deg, rgba(148,187,233,1) 0%, rgba(240,248,255,1) 0%);
+background: linear-gradient(90deg, rgba(148,187,233,1) 0%, rgba(240,248,255,1) 0%);
 }
 
 </style>
@@ -27,7 +27,7 @@ div { font-size: large; }
     <div class="card shadow mb-4">
 
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">My Profile</h6>
+            <h3 class="m-0 font-weight-bold text-secondary">My Profile</h3>
         </div>
 
         <div class="card-body">
@@ -36,7 +36,7 @@ div { font-size: large; }
                 @csrf
 
 
-                <h6 class="heading-small text-muted mb-4">User Information</h6>
+                <h5 class="heading-small text-muted mb-4">User Information</h5>
 
                 <div class="pl-lg-4">
                     <div class="row mt-3">
@@ -91,7 +91,7 @@ div { font-size: large; }
                 <div class="pl-lg-4 mt-3">
                     <div class="row">
                         <div class="col-sm-12">
-                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-outline-primary">Save</button>
                         </div>
                     </div>
                 </div>

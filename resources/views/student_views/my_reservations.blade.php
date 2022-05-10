@@ -18,6 +18,8 @@ div { font-size: large; }
 .card {
   background: linear-gradient(90deg, rgba(148,187,233,1) 0%, rgba(240,248,255,1) 0%);
 }
+
+.text{color:rgb(42, 147, 176)}
 </style>
 
 @section('content')
@@ -27,21 +29,21 @@ div { font-size: large; }
     @foreach ($myReservations as $reservation)
         <div class="card mt-3">
             <div class="card-header">
-               <b> {{$reservation->locker->locker_number}} | {{$reservation->created_at}} </b>
+              <b> {{$reservation->locker->locker_number}} | {{$reservation->created_at}} </b>
             </div>
             <div class="card-body">
-                <ul>
-                        <li>Name: {{$reservation->user->name}}</li>   
-                        <li>University Email:{{$reservation->user->email}}</li>
-                        <li>Department:{{$reservation->user->department}}</li>   
-                        <li>Phone Number: {{$reservation->user->phone_number}}</li>    
-                        <li>Bulding Name: {{$reservation->locker->cupboard->building_name}}</li>     
-                        <li>Floor Number: {{$reservation->locker->cupboard->floor_number}}</li> 
-                        <li>Cupboard Number: {{$reservation->locker->cupboard->number}}</li>   
-                        <li>Locker Number: {{$reservation->locker->locker_number}}</li>
-                        <li>Fee: {{$reservation->reservation_time->locker_fee}}</li>
-                        <li>status:{{$reservation->status}}</li>   
-                    </ul>
+                
+                        <h5><b class="text">Name:</b>&nbsp{{$reservation->user->name}}. </h5> 
+                        <h5><b class="text">University Email:</b>&nbsp{{$reservation->user->email}}.</h5>
+                        <h5><b class="text">Department:</b>&nbsp{{$reservation->user->department}}.</h5>
+                        <h5><b class="text">Phone Number:</b>&nbsp{{$reservation->user->phone_number}}.</h5>
+                        <h5><b class="text">Bulding Name:</b>&nbsp{{$reservation->locker->cupboard->building_name}}.</h5>    
+                        <h5><b class="text">Floor Number:</b>&nbsp{{$reservation->locker->cupboard->floor_number}}.</h5>
+                        <h5><b class="text">Cupboard Number:</b>&nbsp{{$reservation->locker->cupboard->number}}.</h5>
+                        <h5><b class="text">Locker Number:</b>&nbsp{{$reservation->locker->locker_number}}.</h5>
+                        <h5><b class="text">Fee:</b>&nbsp{{$reservation->reservation_time->locker_fee}}.</h5>
+                        <h5><b class="text">status:</b>&nbsp{{$reservation->status}}.</h5>
+                  
                 </div>
         </div>
     @endforeach

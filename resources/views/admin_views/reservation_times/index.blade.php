@@ -4,7 +4,7 @@
 <div class="container pt-5">
     <div class="row">
         <div class="col-sm-3 p-0">
-            <a href="{{route('admin.reservation_times.create')}}" class="btn btn-success">Create Reservation Time</a>
+            <a href="{{route('admin.reservation_times.create')}}" class="btn btn-outline-info">Create Reservation Time</a>
         </div>
     </div>
     <div class="row mt-3">
