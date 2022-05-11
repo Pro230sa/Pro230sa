@@ -121,7 +121,7 @@ body {
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header"><h3>{{ __('Register') }}</h3></div>
+                <div class="card-header"><h3>{{ __('Sign up') }}</h3></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
