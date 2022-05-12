@@ -166,7 +166,7 @@ body {
                 </div>
                 <div class="modal-body">
                   <ul>
-                    <li> <b> The price for reservation is: {{$reservation_time->locker_fee}} SAR </b> </li>
+                    <li> <b> The Fee for reservation is: {{$reservation_time->locker_fee}} SAR </b> </li>
                   </ul>
                   <ul>
                   <li> Lockers are rented every the semester. </li>

@@ -201,8 +201,8 @@ body {
 <br>
 <hr> 
                             
-                            <ul> <b> Contact us: </b> 
-                            <li><a href="mailto:admin@outlook.com"> Email for Contact </a></li>
+                            <ul> <b> For Contact </b> 
+                            <li><a href="mailto:admin@outlook.com"> Email  </a></li>
                                 <li>Phone Number: 88888888888</li>
                                 
                             </ul>
