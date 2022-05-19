@@ -109,7 +109,7 @@
                                 @endif
                                 @if(Auth::guard('admin')->check())
                                     <li class="nav-item">
-                                        <a class="nav-link pl-0 text-nowrap" href="{{route('admin.dashboard')}}"><i class="fa-solid fa-chart-line"></i> <span class="font-weight-bold">Dashboard</span></a>
+                                        <a class="nav-link pl-0 text-nowrap" href="{{route('admin.dashboard')}}"><i class="fa-solid fa-chart-line"></i> <span class="font-weight-bold">Stats</span></a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link pl-0 text-nowrap" href="{{route('admin.reservation_times')}}"><i class="fa-solid fa-clock"></i> <span class="font-weight-bold">Reservations Times</span></a>
